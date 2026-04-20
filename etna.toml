@@ -1,3 +1,5 @@
-name = "RARE"
+name = "rare-ocaml"
 language = "OCaml"
 description = "Regular expression / string-based fuzzing workload (OCaml, crowbar + qcheck + afl + base runners)."
+
+mutations = []
