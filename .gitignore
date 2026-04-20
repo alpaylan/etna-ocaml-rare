@@ -1,0 +1,10 @@
+_build/
+*.install
+.merlin
+.DS_Store
+etna.log
+out
+afl
+qcheck
+crowbar
+base

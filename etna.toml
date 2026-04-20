@@ -1,0 +1,3 @@
+name = "RARE"
+language = "OCaml"
+description = "Regular expression / string-based fuzzing workload (OCaml, crowbar + qcheck + afl + base runners)."

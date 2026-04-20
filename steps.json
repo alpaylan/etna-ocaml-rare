@@ -1,0 +1,74 @@
+{
+  "setup_steps": [
+    {
+      "Command": {
+        "command": "dune",
+        "args": [
+          "--version"
+        ]
+      }
+    },
+    {
+      "Command": {
+        "command": "opam",
+        "args": [
+          "--version"
+        ]
+      }
+    },
+    {
+      "Command": {
+        "run_at": "${workload_path}",
+        "command": "opam",
+        "args": [
+          "install",
+          "./util",
+          "--yes"
+        ]
+      }
+    }
+  ],
+  "build_steps": [
+    {
+      "Command": {
+        "command": "opam",
+        "args": [
+          "switch"
+        ]
+      }
+    },
+    {
+      "Command": {
+        "command": "opam",
+        "args": [
+          "exec",
+          "--",
+          "dune",
+          "build"
+        ]
+      }
+    }
+  ],
+  "capabilities": {
+    "solve": [
+      {
+        "Command": {
+          "run_at": "${workload_path}",
+          "command": "opam",
+          "args": [
+            "exec",
+            "--",
+            "dune",
+            "exec",
+            "RARE",
+            "--",
+            "${strategy}",
+            "$property",
+            "type",
+            "out"
+          ]
+        }
+      }
+    ]
+  }
+}
